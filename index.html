@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Job Tracker | Home</title>
 
     <!-- fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- font awesome CDN  -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         * {
@@ -26,6 +28,28 @@
 </head>
 
 <body>
+    <!-- dashboard section  -->
+    <section class="min-h-screen  px-24 bg-base-200 p-10">
+        <h1 class="text-[#003366] text-[34px] font-bold mb-6 leading-8">Job Application Tracker</h1>
+
+        <div class="grid grid-cols-3 gap-4 mb-[30px]">
+            <div class="bg-base-100 p-6 border border-gray-100 rounded-lg">
+                <div class="text-sm font-semibold text-gray-600">Total</div>
+                <div class="text-[#003366] text-[26px] mt-2 font-bold">8</div>
+            </div>
+
+            <div class="bg-base-100 p-6 border border-gray-100 rounded-lg">
+                <div class="text-sm font-semibold text-gray-600">Interview</div>
+                <div class="text-emerald-500 text-[26px] mt-2 font-bold">0</div>
+            </div>
+
+            <div class="bg-base-100 p-6 border border-gray-100 rounded-lg">
+                <div class="text-sm font-semibold text-gray-600">Rejected</div>
+                <div class="text-red-500 text-[26px] mt-2 font-bold">0</div>
+            </div>
+        </div>
+        <hr class="border border-gray-200">
+    </section>
 
 </body>
 
