@@ -36,7 +36,7 @@ const parent = document.getElementById('parent_id');
 parent.appendChild(child);
 
 
-**3.What is Event Bubbling? And how does it work?**
+**3.What is Event Bubbling? And how does it work?**<br>
 Event Bubbling is a way of handling events in the browser where an event starts at the child and then bubbles up to the Parent and Grandparent one by one untill
 it gets to the root element.
 
@@ -45,7 +45,7 @@ When we click an element it doesn't just stay there, it travels upwards. It star
 through the grandparent, then the parent of grandparent and so on until it reaches the root of the webpage.
 
 
-**4. What is Event Delegation in JavaScript? Why is it useful?**
+**4. What is Event Delegation in JavaScript? Why is it useful?**<br>
 Event Delegation is a smart way to manage events by attaching a single event listener to a parent element instead of attaching many listeners to every individual child element.
 
 It is useful because it reduces the number of event listeners. It also reduces the memory usages. It is the best way for dynamically added elements.
