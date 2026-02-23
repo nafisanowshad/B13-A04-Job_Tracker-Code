@@ -43,5 +43,21 @@ function toggling(id) {
 }
 
 mainContainer.addEventListener("click", function (event) {
-    
+    // console.log(event.target.parentNode.parentNode);
+  const parenNode = event.target.parentNode.parentNode.parentNode.parentNode.parentNode;
+  const card1Title = parenNode.querySelector(".card1-title").innerText;
+  const card1Position = parenNode.querySelector(".card1-position").innerText;
+  const card1Location = parenNode.querySelector(".card1-location").innerText;
+  const card1Description =
+    parenNode.querySelector(".card1-description").innerText;
+    // console.log(card1Title);
+
+  const card1Info = {
+    card1Title,
+    card1Position,
+    card1Location,
+    card1Description,
+  }
+
+//   console.log(card1Info);
 });

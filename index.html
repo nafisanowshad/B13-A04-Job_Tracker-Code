@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Tracker</title>
 
+    <!-- fav icon  -->
+    <link rel="shortcut icon" href="./assets/icons8-job-64.png" type="image/x-icon">
+
     <!-- fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +28,7 @@
             font-family: "Geist", sans-serif;
         }
     </style>
+
 </head>
 
 <body>
@@ -36,21 +40,21 @@
 
         <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-[30px]">
             <div class="bg-base-100 p-6 border border-gray-100 rounded-lg">
-                <div class="text-sm font-semibold text-gray-600">Total</div>
-                <div id="dashboard-total"
-                    class="text-[#003366] text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</div>
+                <p class="text-sm font-semibold text-gray-600">Total</p>
+                <p id="dashboard-total"
+                    class="text-[#003366] text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</p>
             </div>
 
             <div class="bg-base-100 p-6 border border-gray-100 rounded-lg">
-                <div class="text-sm font-semibold text-gray-600">Interview</div>
-                <div id="dashboard-interview"
-                    class="text-emerald-500 text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</div>
+                <p class="text-sm font-semibold text-gray-600">Interview</p>
+                <p id="dashboard-interview"
+                    class="text-emerald-500 text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</p>
             </div>
 
             <div class="bg-base-100 p-6 border border-gray-100 rounded-lg">
-                <div class="text-sm font-semibold text-gray-600">Rejected</div>
-                <div id="dashboard-rejected"
-                    class="text-red-500 text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</div>
+                <p class="text-sm font-semibold text-gray-600">Rejected</p>
+                <p id="dashboard-rejected"
+                    class="text-red-500 text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</p>
             </div>
         </div>
         <hr class="border border-gray-200">
@@ -69,6 +73,8 @@
                     <p class=" text-xs lg:text-sm font-semibold text-gray-500">8 jobs</p>
                 </div>
             </div>
+
+            <!-- main buttons  -->
             <div>
                 <button onclick="toggling('all-btn')" id="all-btn"
                     class="btn bg-[#3B82F6] text-[#FFFFFF] text-[11px] sm:text-[14px] px-5 sm:px-7 py-2 btn-xs sm:btn-sm hover:bg-[#195ece]">All</button>
@@ -87,10 +93,12 @@
                 <div class="card-body bg-base-100 rounded-lg">
                     <div class="flex justify-between">
                         <div>
-                            <h3 class="text-[#003366] font-semibold text-[19px] sm:text-[20px] leading-6 pb-[-5px]">
+                            <h3
+                                class=" card1-title text-[#003366] font-semibold text-[19px] sm:text-[20px] leading-6 pb-[-5px]">
                                 Mobile First Corp
                             </h3>
-                            <h4 class="text-[#64748B] text-[15px] sm:text-[18px] leading-5 pb-[15px]">React Native
+                            <h4 class="card1-position text-[#64748B] text-[15px] sm:text-[18px] leading-5 pb-[15px]">
+                                React Native
                                 Developer</h4>
                         </div>
                         <div>
@@ -98,7 +106,8 @@
                                     class=" fa-regular fa-trash-can"></i></button>
                         </div>
                     </div>
-                    <p class="text-[#64748B] text-[14px] sm:text-[16px] leading-5 pb-[15px]">Remote • Full-time •
+                    <p class="card1-location text-[#64748B] text-[14px] sm:text-[16px] leading-5 pb-[15px]">Remote •
+                        Full-time •
                         $130,000 -
                         $175,000</p>
                     <div>
@@ -106,7 +115,8 @@
                             class="btn btn-outline btn-xs sm:btn-sm bg-[#EEF4FF] border-none font-medium text-[13px] sm:text-[16px] text-[#002C5C] hover:bg-[#e5ecfb]">Not
                             Applied</button>
                     </div>
-                    <p class="text-[14px] sm:text-[16px] text-[#323B49] leading-[20px] pb-[15px]">Build cross-platform
+                    <p class="card1-description text-[14px] sm:text-[16px] text-[#323B49] leading-[20px] pb-[15px]">
+                        Build cross-platform
                         mobile
                         applications using
                         React Native. Work on products used by millions of
@@ -386,7 +396,7 @@
                     <div
                         class="flex flex-col items-center justify-center bg-white py-17 sm:py-22  border border-gray-100 shadow-sm rounded-xl">
                         <div class="mb-6">
-                            <img src="jobs.png" alt="">
+                            <img src="./assets/jobs.png" alt="">
                         </div>
                         <h3
                             class="text-[#003366] text-[17px] sm:text-[22px] font-bold leading-[25px] sm:leading-[27px] ">
