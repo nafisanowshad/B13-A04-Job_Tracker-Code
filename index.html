@@ -34,62 +34,54 @@
 <body>
 
     <!-- dashboard section  -->
-    <header class="min-h-screen  px-24 bg-[#F8FAFC] p-10 mb-[-80px] sm:mb-[-240px] lg:mb-[-390px]">
+    <section class="min-h-screen  px-24 bg-[#F8FAFC] p-10 mb-[-80px] sm:mb-[-240px] lg:mb-[-390px]">
         <h1 class="text-[#003366] text-[20px] sm:text-[28px] lg:text-[34px] font-bold mb-6 leading-8">Job Application
             Tracker</h1>
 
+    <!-- dashboard cards section  -->
         <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-[30px]">
             <div class="bg-base-100 p-6 border border-gray-100 rounded-lg">
                 <p class="text-sm font-semibold text-gray-600">Total</p>
-                <p id="dashboard-total"
-                    class="text-[#003366] text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</p>
+                <h2 id="total-cnt"
+                    class="text-[#003366] text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</h2>
             </div>
 
             <div class="bg-base-100 p-6 border border-gray-100 rounded-lg">
                 <p class="text-sm font-semibold text-gray-600">Interview</p>
-                <p id="dashboard-interview"
-                    class="text-emerald-500 text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</p>
+                <h2 id="interview-cnt"
+                    class="text-emerald-500 text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</h2>
             </div>
 
             <div class="bg-base-100 p-6 border border-gray-100 rounded-lg">
                 <p class="text-sm font-semibold text-gray-600">Rejected</p>
-                <p id="dashboard-rejected"
-                    class="text-red-500 text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</p>
-            </div>
-        </div>
-        <hr class="border border-gray-200">
-    </header>
-
-
-    <!-- available jobs section  -->
-    <main class="min-h-screen  px-24 bg-[#F8FAFC] pb-17">
-        <!-- when no jobs available section working this section will be hidden  -->
-        <div class="">
-            <div class="flex justify-between">
-                <div>
-                    <h1 class="text-[#003366] text-[19px] lg:text-[24px] font-bold mb-6 leading-8">Available Jobs</h1>
-                </div>
-                <div>
-                    <p class=" text-xs lg:text-sm font-semibold text-gray-500">8 jobs</p>
-                </div>
-            </div>
-
-            <!-- main buttons  -->
-            <div>
-                <button onclick="toggling('all-btn')" id="all-btn"
-                    class="btn bg-[#3B82F6] text-[#FFFFFF] text-[11px] sm:text-[14px] px-5 sm:px-7 py-2 btn-xs sm:btn-sm hover:bg-[#195ece]">All</button>
-                <button onclick="toggling('interview-btn')" id="interview-btn"
-                    class="btn btn-soft text-[#64748B] text-[11px] sm:text-[14px] bg-base-100 btn-xs sm:btn-sm hover:bg-[#e6e7ea]">Interview</button>
-                <button onclick="toggling('rejected-btn')" id="rejected-btn"
-                    class="btn btn-soft text-[#64748B] text-[11px] sm:text-[14px] bg-base-100 btn-xs sm:btn-sm hover:bg-[#e6e7ea]">Rejected</button>
+                <h2 id="rejected-cnt"
+                    class="text-red-500 text-[20px] sm:text-[23px] lg:text-[26px] mt-2 font-bold">0</h2>
             </div>
         </div>
 
+    <hr class="border border-gray-200">
 
-        <!-- available jobs cards section  -->
+    <!-- available jobs section title -->
+        <div class="flex justify-between mt-[30px]">
+            <h3 class="text-[#003366] text-[19px] lg:text-[24px] font-bold mb-6 leading-8">Available Jobs</h3>
+            <span class="text-xs lg:text-sm font-semibold text-gray-500"><span id="click-cnt">0 </span> Jobs</span>
+        </div>
+
+    <!-- available job section buttons -->
+        <div id="clks" class="mb-[30px]">
+            <button data-tab="all"
+                class="available-job-btn btn-active btn bg-[#3B82F6] text-[#FFFFFF] text-[11px] sm:text-[14px] px-5 sm:px-7 py-2 btn-xs sm:btn-sm hover:bg-[#195ece]">All</button>
+            <button data-tab="interview"
+                class="available-job-btn btn btn-soft text-[#64748B] text-[11px] sm:text-[14px] bg-base-100 btn-xs sm:btn-sm hover:bg-[#e6e7ea]">Interview</button>
+            <button data-tab="rejected"
+                class="available-job-btn btn btn-soft text-[#64748B] text-[11px] sm:text-[14px] bg-base-100 btn-xs sm:btn-sm hover:bg-[#e6e7ea]">Rejected</button>
+        </div>
+
+        <div id="jobs-container" class="space-y-4"></div>
+
+        <!-- cards section  -->
         <div class="mt-4">
-            <!-- when no jobs available section working this section will be hidden  -->
-            <div id="allCards" class="card gap-4 card-sm">
+            <!-- <div id="allCards" class="card gap-4 card-sm">
                 <div class="card-body bg-base-100 rounded-lg">
                     <div class="flex justify-between">
                         <div>
@@ -368,48 +360,19 @@
                     </div>
                 </div>
 
+            </div> -->
+
+    <!-- no jobs available section -->
+            <div id="no-jobs-section"
+                class="hidden  flex flex-col items-center justify-center bg-white py-17 sm:py-22  border border-gray-100 shadow-sm rounded-xl mt-[70px]">
+                <img src="./assets/jobs.png" alt="">
+                <h3 class="text-[#003366] text-[17px] sm:text-[22px] font-bold leading-[25px] sm:leading-[27px] ">
+                    No jobs available</h3>
+                <p class="text-[11px] sm:text-[15px] text-gray-400  mt-2">Check back soon for new job
+                    opportunities</p>
             </div>
-
-
-            <!-- no jobs available section  -->
-            <section class="hidden">
-                <div class="flex justify-between">
-                    <div>
-                        <h1 class="text-[#003366] text-[18px] lg:text-[24px] font-bold mb-6 leading-8">Available Jobs
-                        </h1>
-                    </div>
-                    <div>
-                        <p class=" text-xs lg:text-sm font-semibold text-gray-500">0 jobs</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-2 mb-6">
-                    <button
-                        class="btn bg-base-100 text-[#64748B] text-[11px] sm:text-[14px] px-5 sm:px-7 py-2 btn-xs sm:btn-sm hover:bg-[#e6e7ea]">All</button>
-                    <button
-                        class="btn btn-soft text-[#64748B] text-[11px] sm:text-[14px] bg-base-100 btn-xs sm:btn-sm hover:bg-[#e6e7ea]">Interview</button>
-                    <button
-                        class="btn btn-soft text-[#64748B] text-[11px] sm:text-[14px] bg-base-100 btn-xs sm:btn-sm hover:bg-[#e6e7ea]">Rejected</button>
-                </div>
-
-                <div>
-                    <div
-                        class="flex flex-col items-center justify-center bg-white py-17 sm:py-22  border border-gray-100 shadow-sm rounded-xl">
-                        <div class="mb-6">
-                            <img src="./assets/jobs.png" alt="">
-                        </div>
-                        <h3
-                            class="text-[#003366] text-[17px] sm:text-[22px] font-bold leading-[25px] sm:leading-[27px] ">
-                            No jobs available</h3>
-                        <p class="text-[11px] sm:text-[15px] text-gray-400  mt-2">Check back soon for new job
-                            opportunities</p>
-                    </div>
-                </div>
-            </section>
-
         </div>
-
-    </main>
+    </section>
 
     <script src="./script/tracker.js"></script>
 
